@@ -51,7 +51,7 @@ def _filelist(absolute_path, relative_path, ignore_rules, ignore_file):
         if _should_ignore(relative_node_path, ignore_rules):
             continue
 
-        if os.path.isdir(node):
+        if os.path.isdir(absolute_node_path):
             child_files = _filelist(absolute_node_path, relative_node_path, ignore_rules, ignore_file)
             pwd_files.extend(child_files)
         else:
