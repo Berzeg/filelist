@@ -7,7 +7,7 @@ import os
 import re
 import fnmatch
 
-def filelist(absolute_dir, absolute_filenames=True, ignore_file=".pyignore"):
+def filelist(absolute_dir, absolute_filenames=True, standard_ignore_rules=[], ignore_file=".pyignore"):
     """ Get all files in a directory that aren't to be ignored
 
     Compiles ignore rules (in shell-style format) as it traverses down a
@@ -20,10 +20,11 @@ def filelist(absolute_dir, absolute_filenames=True, ignore_file=".pyignore"):
     absolute_filenames - Whether the returned file paths should be
         relative to the provided root directory (absolute_dir), or
         whether they should be absolute paths.
+    standard_ignore_rules - An array of (string) ignore rules.
     ignore_file - The standard name of all files that contain ignore
         rules in shell-style format.
     """
-    leaves = _filelist(absolute_dir, ".", [], ignore_file)
+    leaves = _filelist(absolute_dir, ".", standard_ignore_rules, ignore_file)
 
     if not absolute_filenames:
         leaves = _relative_filelist(absolute_dir, leaves)
