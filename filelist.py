@@ -1,8 +1,3 @@
-__author__ = "Hashem Berzeg"
-__license__ = "MIT"
-__version__ = "1.0.0"
-__email__ = "h9.11.2s@gmail.com"
-
 import os
 import re
 import fnmatch

@@ -11,7 +11,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='filelist',
 
-    version='1.1.1',
+    version='1.1.2',
 
     description='Easily list some files in a directory, and exclude others.',
     long_description=long_description,
