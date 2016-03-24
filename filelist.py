@@ -1,6 +1,7 @@
 import os
 import re
 import fnmatch
+import copy
 
 def filelist(absolute_dir, absolute_filenames=True, standard_ignore_rules=[], ignore_file=".pyignore"):
     """ Get all files in a directory that aren't to be ignored
@@ -27,7 +28,7 @@ def filelist(absolute_dir, absolute_filenames=True, standard_ignore_rules=[], ig
     return leaves
 
 def _filelist(absolute_path, relative_path, ignore_rules, ignore_file):
-    ignore_rules = ignore_rules.copy()
+    ignore_rules = copy.copy(ignore_rules)
     pwd_nodes = os.listdir(absolute_path)
 
     # Add new ignore rules, if any exist
