@@ -11,7 +11,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='filelist',
 
-    version='1.1.3',
+    version='1.1.7',
 
     description='Easily list some files in a directory, and exclude others.',
     long_description=long_description,
@@ -20,6 +20,8 @@ setup(
 
     author="Hashem Berzeg",
     author_email="h9.11.2s@gmail.com",
+
+    packages=find_packages(),
 
     license="MIT",
 
@@ -31,6 +33,9 @@ setup(
 
         'License :: OSI Approved :: MIT License',
 
+        'Operating System :: OS Independent',
+
+        'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
